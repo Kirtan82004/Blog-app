@@ -37,9 +37,9 @@ export default function Post() {
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredimage)}
+                        src={appwriteService.getFileView(post.featuredimage)}
                         alt={post.title}
-                        className="rounded-xl"
+                        className="w-auto h-48 sm:h-56 md:h-64 object-cover rounded-xl "
                     />
 
                     {isAuthor && (
@@ -55,12 +55,15 @@ export default function Post() {
                         </div>
                     )}
                 </div>
-                <div className="w-full mb-6">
+                <div className=" bg-white p-6 rounded-lg shadow-sm min-h-[300px]">
+                    <div className="w-full mb-6">
                     <h1 className="text-2xl font-bold">{post.title}</h1>
                 </div>
-                <div className="browser-css">
+                <div className="browser-css ">
                     {parse(post.content)}
-                    </div>
+                </div>
+                </div>
+                
             </Container>
         </div>
     ) : null;

@@ -103,7 +103,7 @@ export class Service{
             return await this.bucket.createFile(
                 conf.appwriteBucketId,
                 ID.unique(),
-                file
+                file 
             )
         } catch (error) {
             console.log("Appwrite serive :: uploadFile :: error", error);
@@ -124,11 +124,16 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId){
-        return this.bucket.getFilePreview(
-            conf.appwriteBucketId,
-            fileId
-        )
+    // getFilePreview(fileId){
+    //     console.log("fileId", fileId);
+    //     return this.bucket.getFilePreview(
+    //         conf.appwriteBucketId,
+    //         fileId
+    //     )
+    // }
+    getFileView(fileId) {
+        console.log("fileId", fileId);
+        return this.bucket.getFileView(conf.appwriteBucketId, fileId).toString();
     }
 }
 
