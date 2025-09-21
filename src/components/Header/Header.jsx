@@ -3,6 +3,7 @@ import { Container, Logo, LogoutBtn } from "../index";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 import { Menu, X } from "lucide-react"; // for mobile hamburger menu icons
 
 function Header() {
@@ -19,14 +20,21 @@ function Header() {
   ];
 
   return (
-    <header className="bg-gray-900 text-white shadow-md">
+    <header className="bg-white text-white shadow-md">
       <Container>
-        <nav className="flex items-center justify-between py-4">
+        <nav className="flex items-center justify-between py-2">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <Logo width="70px" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-12 w-12 rounded-full shadow-md border-2 border-indigo-500 hover:scale-110 hover:shadow-lg transition-transform duration-300"
+            />
+            <span className="text-lg font-bold bg-gradient-to-r from-indigo-600 to-pink-500 bg-clip-text text-transparent hidden sm:block">
+              MyBlog
+            </span>
+            {/* <Logo width="40px" /> */}
           </Link>
-
           {/* Desktop Nav */}
           <ul className="hidden md:flex items-center gap-6">
             {navItems.map(
@@ -35,7 +43,7 @@ function Header() {
                   <li key={item.name}>
                     <button
                       onClick={() => navigate(item.slug)}
-                      className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-800 hover:bg-gray-700 focus:ring-2 focus:ring-gray-500 transition duration-200"
+                      className="px-4 py-2 rounded-lg text-sm font-medium bg-gray-800 hover:scale-110 hover:shadow-lg transition-transform duration-300"
                     >
                       {item.name}
                     </button>

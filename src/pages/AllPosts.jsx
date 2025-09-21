@@ -33,7 +33,7 @@ function AllPosts() {
   );
 
   return (
-    <div className="w-full py-12 bg-gray-50 min-h-screen">
+    <div className="w-full py-12 bg-blue-100 min-h-screen">
       <Container>
         {/* Page Header */}
         <div className="text-center mb-12">

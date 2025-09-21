@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
 import { Container, PostCard } from "../components";
 import { ArrowRight } from "lucide-react";
+import logo from "../assets/logo.png";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -29,6 +30,11 @@ function Home() {
     <div className="w-full bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white py-20">
       <Container>
         <div className="text-center max-w-2xl mx-auto">
+          <img
+            src={logo}
+            alt="Blog Logo"
+            className="w-24 sm:w-32 mx-auto mb-6 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+          />
           <h1 className="text-3xl sm:text-5xl font-bold mb-4">
             Welcome to Our Blog ✨
           </h1>
@@ -71,11 +77,11 @@ function Home() {
   }
 
   return (
-    <div className="w-full bg-gray-50 min-h-screen">
+    <div className="w-full min-h-screen">
       <Hero />
 
       {/* Posts Section */}
-      <div id="posts" className="w-full py-12">
+      <div id="posts" className="w-full py-12  bg-blue-100">
         <Container>
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-8">
             Latest Posts
